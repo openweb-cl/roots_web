@@ -5,81 +5,71 @@
   const clp = (n) => "$" + n.toLocaleString("es-CL");
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-  /* ---------- Contacto ---------- */
+  /* ---------- Contacto y redes ---------- */
   const igUrl = `https://www.instagram.com/${R.contacto.instagram}/`;
   const hasWa = /^\d{8,15}$/.test(R.contacto.whatsapp || "");
   const waUrl = (text) => `https://wa.me/${R.contacto.whatsapp}${text ? "?text=" + encodeURIComponent(text) : ""}`;
-  const chatUrl = hasWa ? waUrl("¡Hola Roots Salinas! Quiero hacer una consulta 🙂") : `https://ig.me/m/${R.contacto.instagram}`;
+  const chatUrl = hasWa ? waUrl("¡Hola Roots Salinas! Quiero hacer una consulta") : `https://ig.me/m/${R.contacto.instagram}`;
 
   $("#footer-ig").href = igUrl;
+  $("#ig-card").href = igUrl;
   if (hasWa) $("#footer-wa").href = waUrl();
   else $("#footer-wa-li").remove();
   $("#fab").href = chatUrl;
   $("#year").textContent = new Date().getFullYear();
 
   document.querySelectorAll("[data-bind]").forEach((el) => (el.textContent = R.contacto[el.dataset.bind] || ""));
+
+  /* ---------- Mapa ---------- */
   const q = encodeURIComponent(R.contacto.mapaQuery);
-  $("#mapa").src = `https://maps.google.com/maps?q=${q}&z=14&output=embed`;
+  $("#mapa").src = `https://maps.google.com/maps?q=${q}&z=13&output=embed`;
   $("#link-mapa").href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+  $("#link-waze").href = `https://waze.com/ul?q=${q}&navigate=yes`;
+
+  /* ---------- Horarios y preguntas frecuentes ---------- */
   $("#horarios").innerHTML = R.horarios.map((h) => `<div><dt>${esc(h.dias)}</dt><dd>${esc(h.horas)}</dd></div>`).join("");
+  $("#faq-list").innerHTML = R.faq.map((f) => `<details><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join("");
 
-  /* ---------- Carta con pestañas ---------- */
-  const tabs = $("#carta-tabs");
-  const panel = $("#carta-panel");
-  function renderCategoria(cat) {
-    panel.innerHTML = `<ul class="menu-list">${cat.items
-      .map(
-        (it) => `<li class="menu-item${it.destacado ? " menu-item--hot" : ""}">
-          <div class="menu-item__info">
-            <h3>${esc(it.nombre)}${it.destacado ? ' <span class="tag">Favorito</span>' : ""}</h3>
-            ${it.detalle ? `<p>${esc(it.detalle)}</p>` : ""}
-          </div>
-          ${R.mostrarPrecios && it.precio ? `<span class="price">${clp(it.precio)}</span>` : ""}
-        </li>`
-      )
-      .join("")}</ul>`;
-    panel.setAttribute("aria-labelledby", "tab-" + cat.id);
-  }
-  tabs.innerHTML = R.carta
-    .map((c, i) => `<button role="tab" id="tab-${c.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-id="${c.id}"><span aria-hidden="true">${c.emoji}</span> ${esc(c.titulo)}</button>`)
+  /* ---------- Carta (todas las categorías a la vista, como la impresa) ---------- */
+  $("#carta-grid").innerHTML = R.carta
+    .map(
+      (cat) => `<section class="carta__panel">
+        <h3><span class="carta__icon" aria-hidden="true">${cat.emoji}</span>${esc(cat.titulo)}</h3>
+        <ul>${cat.items
+          .map(
+            (it) => `<li${it.destacado ? ' class="is-fav"' : ""}>
+              <span class="carta__name">${esc(it.nombre)}${it.destacado ? ' <em class="carta__fav">¡favorito!</em>' : ""}</span>
+              ${R.mostrarPrecios && it.precio ? `<span class="carta__price">${clp(it.precio)}</span>` : ""}
+              ${it.detalle ? `<small>${esc(it.detalle)}</small>` : ""}
+            </li>`
+          )
+          .join("")}</ul>
+      </section>`
+    )
     .join("");
-  function select(btn) {
-    tabs.querySelectorAll("[role=tab]").forEach((b) => {
-      const on = b === btn;
-      b.setAttribute("aria-selected", on);
-      b.tabIndex = on ? 0 : -1;
-    });
-    renderCategoria(R.carta.find((c) => c.id === btn.dataset.id));
-  }
-  tabs.addEventListener("click", (e) => {
-    const b = e.target.closest("[role=tab]");
-    if (b) select(b);
-  });
-  tabs.addEventListener("keydown", (e) => {
-    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-    const all = [...tabs.querySelectorAll("[role=tab]")];
-    const i = all.indexOf(document.activeElement);
-    const next = all[(i + (e.key === "ArrowRight" ? 1 : all.length - 1)) % all.length];
-    next.focus();
-    select(next);
-  });
-  renderCategoria(R.carta[0]);
-  if (!R.mostrarPrecios) $(".menu-download").remove();
+  if (!R.mostrarPrecios) $(".carta__download").remove();
 
-  /* ---------- Packs ---------- */
+  /* ---------- Packs como tickets ---------- */
   $("#packs-grid").innerHTML = R.packs
     .map(
-      (p) => `<article class="pack pack--${p.color} reveal">
-        <div class="pack__top"><span class="pack__icon" aria-hidden="true">${p.icono}</span><span class="pack__min">Desde ${p.minimo} personas</span></div>
-        <h3>${esc(p.nombre)}</h3>
-        <p class="pack__for">${esc(p.para)}</p>
-        <ul>${p.incluye.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
-        <div class="pack__price">${
-          R.mostrarValoresBase && p.valorBase
-            ? `<small>Valor base desde</small><strong>${clp(p.valorBase)}</strong> por persona`
-            : `<strong>Precio a consultar</strong><small>Te enviamos una propuesta según tu grupo</small>`
-        }</div>
-        <a href="#reservar" class="btn btn--dark btn--block" data-pack="${p.id}">Cotizar este pack</a>
+      (p) => `<article class="ticket">
+        <div class="ticket__stub">
+          <span class="ticket__icon" aria-hidden="true">${p.icono}</span>
+          <span class="ticket__min">Desde<strong>${p.minimo}</strong>personas</span>
+        </div>
+        <div class="ticket__body">
+          <h3>${esc(p.nombre)}</h3>
+          <p class="ticket__for">${esc(p.para)}</p>
+          <ul>${p.incluye.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
+          <div class="ticket__foot">
+            <p class="ticket__price">${
+              R.mostrarValoresBase && p.valorBase
+                ? `Desde <strong>${clp(p.valorBase)}</strong> por persona`
+                : `<strong>Precio a consultar</strong>`
+            }</p>
+            <a href="#reservar" class="btn btn--dark btn--sm" data-pack="${p.id}">Cotizar este pack</a>
+          </div>
+        </div>
       </article>`
     )
     .join("");
@@ -90,15 +80,15 @@
     if (a) selPack.value = a.dataset.pack;
   });
 
-  /* ---------- Formulario de reserva ---------- */
+  /* ---------- Comanda (formulario de reserva) ---------- */
   const form = $("#form-reserva");
   const msg = $("#form-msg");
   form.fecha.min = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
-      form.classList.add("form--touched");
-      msg.textContent = "Revisa los campos marcados con *.";
+      form.classList.add("is-touched");
+      msg.textContent = "Faltan datos: completa organizador, tipo de grupo, personas y fecha.";
       form.querySelector(":invalid").focus();
       return;
     }
@@ -106,10 +96,10 @@
     const pack = R.packs.find((p) => p.id === d.pack);
     const fecha = new Date(d.fecha + "T12:00").toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
     const texto = [
-      "¡Hola Roots Salinas! 🌊 Quiero cotizar una visita grupal:",
+      "¡Hola Roots Salinas! Quiero cotizar una visita grupal:",
       `• Organizador: ${d.organizador}`,
       `• Tipo de grupo: ${d.tipo}`,
-      `• Pack: ${pack ? pack.nombre : "A medida / por definir"}`,
+      `• Pack: ${pack ? pack.nombre : "Todavía no sé"}`,
       `• Personas: ${d.personas}`,
       `• Fecha: ${fecha}${d.hora ? " a las " + d.hora : ""}`,
       d.comentarios ? `• Comentarios: ${d.comentarios}` : "",
@@ -117,45 +107,34 @@
 
     if (hasWa) {
       window.open(waUrl(texto), "_blank", "noopener");
-      msg.textContent = "¡Listo! Se abrió WhatsApp con tu solicitud. Solo presiona enviar.";
+      msg.textContent = "Se abrió WhatsApp con tu solicitud. Solo falta presionar enviar.";
     } else {
       try { await navigator.clipboard.writeText(texto); } catch (_) {}
       window.open(`https://ig.me/m/${R.contacto.instagram}`, "_blank", "noopener");
-      msg.textContent = "¡Listo! Copiamos tu solicitud: pégala en el chat de Instagram que se abrió y envíala.";
+      msg.textContent = "Copiamos tu solicitud. Pégala en el chat de Instagram que se abrió y envíala.";
+    }
+  });
+
+  /* ---------- Compartir con el grupo ---------- */
+  $("#compartir").addEventListener("click", async () => {
+    const data = { title: "Roots Salinas", text: "Mira este lugar para nuestra salida de grupo en Playa Las Salinas:", url: location.href.split("#")[0] };
+    if (navigator.share) {
+      try { await navigator.share(data); } catch (_) {}
+    } else {
+      window.open("https://wa.me/?text=" + encodeURIComponent(`${data.text} ${data.url}`), "_blank", "noopener");
     }
   });
 
   /* ---------- Navegación móvil ---------- */
   const toggle = $(".nav__toggle");
   const menu = $("#menu-principal");
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") !== "true";
+  const setMenu = (open) => {
     toggle.setAttribute("aria-expanded", open);
+    toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     menu.classList.toggle("is-open", open);
     document.body.classList.toggle("no-scroll", open);
-  });
-  menu.addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-      toggle.setAttribute("aria-expanded", "false");
-      menu.classList.remove("is-open");
-      document.body.classList.remove("no-scroll");
-    }
-  });
-  const nav = $(".nav");
-  const onScroll = () => nav.classList.toggle("nav--solid", window.scrollY > 40);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  /* ---------- Animaciones al hacer scroll ---------- */
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); }
-      }),
-      { threshold: 0.12 }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-  } else {
-    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
-  }
+  };
+  toggle.addEventListener("click", () => setMenu(toggle.getAttribute("aria-expanded") !== "true"));
+  menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 })();

@@ -13,23 +13,24 @@ vecinos, clubes deportivos y familias.
 | Reservas | Formulario que arma el mensaje y lo abre en **WhatsApp** (o Instagram si aún no hay número) | Sin backend ni base de datos; el pedido llega directo al celular del negocio. |
 | Contenido editable | Todo en `assets/js/config.js` | Carta, packs, horarios y contacto se cambian sin tocar el diseño. |
 | Precios | **Ocultos por ahora.** Carta sin precios, packs "Precio a consultar" | Interruptores `mostrarPrecios` y `mostrarValoresBase` en `config.js` para activarlos cuando se decida. |
-| Estilo | Negro + amarillo oro de la marca, con acentos playeros (mar turquesa, arena, coral) | Mantiene identidad, pero con vida: ilustraciones animadas, tarjetas "sticker", tipografía de la carta impresa. |
+| Estilo | **Kiosko de playa pintado a mano** con negro + amarillo oro de la marca | Para no parecer "otra página de restaurante": toldo a rayas, letreros de cartón a plumón, postal, polaroids, carta igual a la impresa, packs como tickets y formulario como comanda. |
 
-**Tipografías:** Bebas Neue (títulos, igual a la carta impresa) · Kaushan Script ("El sabor que te atrapa")
-· Poppins (texto, igual a "SALINAS" del logo).
+**Tipografías:** Bowlby One (letrero pintado a mano), Permanent Marker (cartones escritos a plumón)
+y Poppins (texto, igual a "SALINAS" del logo).
 
 ## Estructura del sitio
 
-1. **Header** – logo, menú (Inicio · Nosotros · El Lugar · Carta · Packs Grupales · Ubicación) y botón "Reserva tu grupo".
-2. **Hero** – "Entre dunas, río y mar" + "El sabor que te atrapa", ilustración animada de sol, olas, dunas y río.
-3. **Cinta animada** con los productos estrella.
-4. **Nuestras raíces** – historia + 3 tarjetas (hecho al momento, 100% familiar, con la comunidad).
-5. **El lugar** – 4 pilares: Santuario de la Naturaleza, río y playa, dunas, familiar y deportivo.
-6. **Carta** – pestañas por categoría con la carta real (sin precios por ahora).
-7. **Packs grupales** – 5 packs según el público, "Precio a consultar", botón "Cotizar este pack".
-8. **Cotiza tu visita** – formulario (organizador, tipo de grupo, pack, personas, fecha, hora, comentarios) → WhatsApp/Instagram.
-9. **Ubicación y horarios** – mapa de Google, botón "Cómo llegar", horarios.
-10. **Footer** + botón flotante "Escríbenos".
+1. **Header fijo**: logo, menú y botón "Cotizar un grupo".
+2. **Hero**: toldo a rayas, logo, "Entre dunas, río y mar", letreros de cartón y franja de playa ilustrada.
+3. **Nuestras raíces**: una postal "Saludos desde Las Salinas" con historia y 3 valores.
+4. **El lugar**: Santuario de la Naturaleza Humedal Salinas de Pullally y Dunas de Longotoma (677 ha,
+   desembocadura de los ríos Petorca y La Ligua), cifras clave, 4 polaroids y "Cuidemos el santuario".
+5. **Carta**: todas las categorías a la vista, con el estilo de la carta impresa (sin precios por ahora).
+6. **Packs para grupos**: 5 tickets con "Precio a consultar" y botón "Cotizar este pack".
+7. **Cotiza tu visita**: comanda (formulario) → WhatsApp/Instagram, 3 pasos y botón para compartir la página con el grupo.
+8. **Cómo llegar**: rutas desde Santiago, Papudo y en bus; mapa; Google Maps y Waze; horarios; preguntas frecuentes.
+9. **Instagram**: tarjeta para seguir @roots.salinas.
+10. **Footer** con toldo y botón flotante "Escríbenos".
 
 ## Propuesta de packs (valores base guardados, no visibles)
 
@@ -47,6 +48,7 @@ Los valores base proponen ~10% bajo el precio de carta, como incentivo para grup
 ## Fases
 
 ### Fase 1 · MVP publicado (✅ esta entrega)
+- [x] v1 descartada por verse "típica"; v2 con concepto kiosko de playa
 - [x] Rama de trabajo `claude/vibrant-goldberg-dozfks`
 - [x] Sitio completo, responsive (celular primero), accesible y con animaciones suaves
 - [x] Carta real cargada, packs, formulario a WhatsApp/Instagram, mapa
@@ -60,6 +62,8 @@ Los valores base proponen ~10% bajo el precio de carta, como incentivo para grup
 - [ ] Confirmar contenido de cada pack y mínimos de personas
 - [ ] Decidir si se publican valores base de packs y/o precios de carta
 - [ ] Revisar textos de "Nuestras raíces"
+- [ ] Confirmar respuestas de **preguntas frecuentes** (`faq` en `config.js`): anticipación, atención fuera de temporada, medios de pago
+- [ ] Confirmar que se puede llegar en bus de grupo y dónde estacionar
 
 ### Fase 3 · Lanzamiento y venta
 - [ ] Dominio propio (ej. `rootssalinas.cl`, ~$10.000 CLP/año en NIC Chile) apuntando a GitHub Pages

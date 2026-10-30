@@ -18,9 +18,18 @@ window.ROOTS = {
 
   // Horarios (texto libre). ⚠ CONFIRMAR antes de publicar.
   horarios: [
-    { dias: "Temporada de verano", horas: "Todos los días · 12:00 a 20:00" },
+    { dias: "Temporada de verano", horas: "Todos los días, de 12:00 a 20:00" },
     { dias: "Resto del año", horas: "Fines de semana y festivos" },
     { dias: "Grupos", horas: "Atención con reserva previa, todo el año" },
+  ],
+
+  // Preguntas frecuentes. ⚠ CONFIRMAR las respuestas antes del lanzamiento.
+  faq: [
+    { p: "¿Necesito reservar?", r: "Para grupos sí: así tenemos el espacio y la comida lista cuando lleguen. Si vienes con tu familia o amigos, no hace falta." },
+    { p: "¿Con cuánta anticipación cotizo un pack?", r: "Idealmente con una semana. Para grupos de más de 40 personas, con dos semanas." },
+    { p: "¿Atienden fuera de temporada?", r: "Sí, los grupos con reserva se atienden todo el año. Escríbenos y coordinamos." },
+    { p: "¿Pueden adaptar el menú?", r: "Sí. Cuéntanos en la comanda si hay personas vegetarianas, celíacas o con alguna alergia." },
+    { p: "¿Cómo pago?", r: "Te contamos los medios de pago al confirmar la reserva." },
   ],
 
   // true = la carta muestra precios. false = solo nombres y descripciones

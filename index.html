@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roots Salinas · Comida rica frente al mar en Playa Las Salinas, Papudo</title>
-  <meta name="description" content="Roots Salinas: churrascos, completos, empanadas, churros y helados en Playa Las Salinas de Pullally, Papudo. Packs especiales para colegios, clubes de adulto mayor, centros de madres y clubes deportivos.">
-  <meta name="theme-color" content="#0d0d0d">
+  <title>Roots Salinas | Comida rica frente al mar en Playa Las Salinas de Pullally, Papudo</title>
+  <meta name="description" content="Roots Salinas: churrascos, completos, empanadas, churros y helados en Playa Las Salinas de Pullally, Papudo, junto al Santuario de la Naturaleza. Packs para colegios, clubes de adulto mayor, centros de madres y clubes deportivos.">
+  <meta name="theme-color" content="#141210">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
   <meta property="og:type" content="restaurant">
   <meta property="og:locale" content="es_CL">
-  <meta property="og:title" content="Roots Salinas · El sabor que te atrapa">
-  <meta property="og:description" content="Tu punto de encuentro entre dunas, río y mar en Playa Las Salinas, Pullally. ¡Packs para grupos!">
+  <meta property="og:site_name" content="Roots Salinas">
+  <meta property="og:title" content="Roots Salinas, el sabor que te atrapa">
+  <meta property="og:description" content="Tu punto de encuentro entre dunas, río y mar en Playa Las Salinas de Pullally, Papudo. ¡Packs para grupos!">
   <meta property="og:image" content="https://cristobalrocosaavedra.github.io/roots_web/assets/img/og-image.jpg">
   <meta property="og:url" content="https://cristobalrocosaavedra.github.io/roots_web/">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Permanent+Marker&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <script type="application/ld+json">
@@ -28,6 +29,8 @@
     "@type": "Restaurant",
     "name": "Roots Salinas",
     "slogan": "El sabor que te atrapa",
+    "url": "https://cristobalrocosaavedra.github.io/roots_web/",
+    "image": "https://cristobalrocosaavedra.github.io/roots_web/assets/img/og-image.jpg",
     "servesCuisine": ["Comida chilena", "Sándwiches", "Comida rápida"],
     "address": {
       "@type": "PostalAddress",
@@ -44,301 +47,293 @@
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <!-- ============ HEADER ============ -->
-  <header class="nav" id="top">
+  <header class="nav">
     <div class="nav__inner">
-      <a href="#inicio" class="nav__brand" aria-label="Roots Salinas, inicio">
-        <img src="assets/img/logo.jpg" alt="" width="48" height="48">
-        <span>Roots<small>Salinas</small></span>
+      <a href="#inicio" class="nav__brand" aria-label="Roots Salinas, ir al inicio">
+        <img src="assets/img/logo.jpg" alt="" width="44" height="44">
       </a>
       <button class="nav__toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
       <nav id="menu-principal" class="nav__menu" aria-label="Principal">
-        <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
-        <a href="#entorno">El Lugar</a>
+        <a href="#entorno">El lugar</a>
         <a href="#carta">Carta</a>
-        <a href="#packs">Packs Grupales</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#reservar" class="btn btn--gold btn--sm">Reserva tu grupo</a>
+        <a href="#packs">Packs para grupos</a>
+        <a href="#ubicacion">Cómo llegar</a>
+        <a href="#reservar" class="btn btn--gold btn--sm">Cotizar un grupo</a>
       </nav>
     </div>
   </header>
 
   <main id="contenido">
-    <!-- ============ HERO ============ -->
+    <!-- HERO: el frente del kiosko -->
     <section class="hero" id="inicio">
-      <div class="hero__scene" aria-hidden="true">
-        <svg class="hero__svg" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMax slice">
-          <defs>
-            <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#FFDE59" stop-opacity=".55"/>
-              <stop offset="100%" stop-color="#FFDE59" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#1fb5c9"/>
-              <stop offset="1" stop-color="#0a5f73"/>
-            </linearGradient>
-          </defs>
-          <circle cx="1080" cy="250" r="260" fill="url(#sunGlow)"/>
-          <g class="sun">
-            <circle cx="1080" cy="250" r="110" fill="#FFDE59"/>
-            <g stroke="#FFDE59" stroke-width="10" stroke-linecap="round">
-              <line x1="1080" y1="95" x2="1080" y2="60"/><line x1="1080" y1="405" x2="1080" y2="440"/>
-              <line x1="925" y1="250" x2="890" y2="250"/><line x1="1235" y1="250" x2="1270" y2="250"/>
-              <line x1="970" y1="140" x2="945" y2="115"/><line x1="1190" y1="360" x2="1215" y2="385"/>
-              <line x1="1190" y1="140" x2="1215" y2="115"/><line x1="970" y1="360" x2="945" y2="385"/>
-            </g>
-          </g>
-          <g class="birds" fill="none" stroke="#f5f0e1" stroke-width="4" stroke-linecap="round">
-            <path d="M300 150 q15 -15 30 0 q15 -15 30 0"/>
-            <path d="M380 110 q10 -10 20 0 q10 -10 20 0"/>
-            <path d="M700 180 q12 -12 24 0 q12 -12 24 0"/>
-          </g>
-          <path class="wave wave--back" d="M0 420 Q120 390 240 420 T480 420 T720 420 T960 420 T1200 420 T1440 420 T1680 420 V640 H0Z" fill="url(#sea)"/>
-          <path class="wave wave--front" d="M0 455 Q120 430 240 455 T480 455 T720 455 T960 455 T1200 455 T1440 455 T1680 455 V640 H0Z" fill="#0d7f93" opacity=".85"/>
-          <path d="M0 500 C200 460 360 470 520 510 C700 555 820 470 1000 480 C1180 490 1300 540 1440 520 V640 H0Z" fill="#e8c77a"/>
-          <path d="M0 560 C260 520 420 600 640 570 C860 540 1040 600 1440 560 V640 H0Z" fill="#d9ad55"/>
-          <path d="M540 640 C600 600 700 590 760 560 C820 530 900 540 980 520" fill="none" stroke="#1fb5c9" stroke-width="18" stroke-linecap="round" opacity=".9"/>
-          <g fill="#3f6b2a">
-            <path d="M120 520 l8 -60 l6 60z"/><path d="M140 520 l14 -50 l2 52z"/><path d="M100 522 l-6 -44 l14 44z"/>
-            <path d="M1260 540 l8 -60 l6 60z"/><path d="M1280 540 l14 -50 l2 52z"/><path d="M1240 542 l-6 -44 l14 44z"/>
-          </g>
-        </svg>
-      </div>
+      <div class="awning" aria-hidden="true"></div>
 
-      <div class="hero__content">
-        <p class="hero__kicker">Playa Las Salinas · Pullally · Papudo</p>
-        <h1 class="hero__title">Entre dunas, <br>río <span>y mar</span></h1>
-        <p class="hero__script">El sabor que te atrapa</p>
-        <p class="hero__lead">Tu punto de encuentro en la playa: churrascos, completos, empanadas, churros y helados para recargar energía después del agua, la caminata o el partido.</p>
+      <div class="hero__stage">
+        <p class="sign sign--left" aria-hidden="true">¡Churros <br>calentitos!</p>
+        <p class="sign sign--right" aria-hidden="true">Grupos <br>bienvenidos</p>
+
+        <img class="hero__logo" src="assets/img/logo.jpg" alt="Roots Salinas" width="200" height="200">
+        <h1 class="hero__title">Entre dunas, río y mar</h1>
+        <p class="hero__lead">Churrascos, completos, empanadas, churros y helados en Playa Las Salinas de Pullally, Papudo. Para después del agua, la caminata o el partido.</p>
         <div class="hero__ctas">
           <a href="#carta" class="btn btn--outline">Ver la carta</a>
-          <a href="#packs" class="btn btn--gold">Packs para grupos</a>
+          <a href="#packs" class="btn btn--gold">Ver packs para grupos</a>
         </div>
-        <ul class="hero__chips">
-          <li>🏖️ A pasos del mar</li>
-          <li>👨‍👩‍👧 Ambiente familiar</li>
-          <li>🚌 Recibimos grupos</li>
-        </ul>
       </div>
+
+      <svg class="hero__beach" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 70 Q90 50 180 70 T360 70 T540 70 T720 70 T900 70 T1080 70 T1260 70 T1440 70 V220 H0Z" fill="#1c9bb0"/>
+        <path d="M0 95 Q90 78 180 95 T360 95 T540 95 T720 95 T900 95 T1080 95 T1260 95 T1440 95 V220 H0Z" fill="#137487"/>
+        <path d="M0 130 C220 100 380 110 560 140 C760 172 900 110 1100 118 C1260 124 1360 150 1440 140 V220 H0Z" fill="#e7c47a"/>
+        <path d="M0 180 C260 150 460 210 700 185 C930 160 1120 205 1440 175 V220 H0Z" fill="#d1a24c"/>
+        <path d="M600 220 C650 190 720 170 800 150 C860 136 930 128 1000 120" fill="none" stroke="#1c9bb0" stroke-width="16" stroke-linecap="round"/>
+        <g stroke="#4c6b2c" stroke-width="4" stroke-linecap="round" fill="none">
+          <path d="M150 150 l-6 -34 M158 150 l2 -40 M166 150 l8 -32"/>
+          <path d="M1250 160 l-6 -34 M1258 160 l2 -40 M1266 160 l8 -32"/>
+          <path d="M380 175 l-4 -24 M386 175 l2 -28 M392 175 l6 -22"/>
+        </g>
+      </svg>
     </section>
 
-    <!-- ============ MARQUEE ============ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Churrascos</span><span>★</span><span>Completos</span><span>★</span><span>Empanadas</span><span>★</span><span>Chorrillanas</span><span>★</span><span>Churros</span><span>★</span><span>Helados</span><span>★</span><span>Choclo en vaso</span><span>★</span><span>Granizados</span><span>★</span>
-        <span>Churrascos</span><span>★</span><span>Completos</span><span>★</span><span>Empanadas</span><span>★</span><span>Chorrillanas</span><span>★</span><span>Churros</span><span>★</span><span>Helados</span><span>★</span><span>Choclo en vaso</span><span>★</span><span>Granizados</span><span>★</span>
-      </div>
-    </div>
-
-    <!-- ============ NOSOTROS ============ -->
-    <section class="section section--sand" id="nosotros">
-      <div class="container split">
-        <div class="split__text reveal">
-          <p class="eyebrow">Nuestras raíces</p>
-          <h2 class="title">Un refugio rico <br>a la orilla de la playa</h2>
-          <p>Roots Salinas nace del cariño por nuestro territorio y la buena mesa. Somos el lugar para compartir en familia, recargar energías tras un día de playa o reunir a la comunidad en un entorno único, donde el río se encuentra con el mar.</p>
-          <p>Cocinamos al momento, con sabor casero y precios para que venga todo el grupo.</p>
-        </div>
-        <div class="cards3 reveal">
-          <article class="mini-card">
-            <span class="mini-card__icon">🔥</span>
-            <h3>Hecho al momento</h3>
-            <p>Churrascos, empanadas y churros recién hechos, con insumos de la zona.</p>
-          </article>
-          <article class="mini-card">
-            <span class="mini-card__icon">🏡</span>
-            <h3>100% familiar</h3>
-            <p>Un espacio tranquilo para niños, abuelos y amigos, con la playa a la vista.</p>
-          </article>
-          <article class="mini-card">
-            <span class="mini-card__icon">🤝</span>
-            <h3>Con la comunidad</h3>
-            <p>Apoyamos a clubes, juntas de vecinos y colegios con atención especial para grupos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ENTORNO ============ -->
-    <section class="section section--dark" id="entorno">
+    <!-- NOSOTROS: una postal -->
+    <section class="section section--black" id="nosotros">
       <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">El lugar</p>
-          <h2 class="title">Un entorno privilegiado</h2>
-          <p class="section__sub">Las Salinas de Pullally es uno de los rincones más lindos de la costa de Papudo. Ven por el sabor, quédate por el paisaje.</p>
-        </header>
-        <div class="pillars">
-          <article class="pillar reveal">
-            <div class="pillar__art pillar__art--green" aria-hidden="true">
-              <svg viewBox="0 0 200 120"><circle cx="150" cy="35" r="16" fill="#FFDE59"/><path d="M0 120 C40 70 80 90 100 70 C130 40 160 80 200 60 V120Z" fill="#3f6b2a"/><path d="M60 95 q10 -30 20 0 M70 95 v-20" stroke="#9cd17a" stroke-width="4" fill="none"/><path d="M110 60 q8 -6 16 0 q8 -6 16 0" stroke="#f5f0e1" stroke-width="3" fill="none"/></svg>
+        <article class="postcard">
+          <div class="postcard__front" aria-hidden="true">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+              <rect width="400" height="300" fill="#ffde59"/>
+              <circle cx="300" cy="90" r="46" fill="#fff4c2"/>
+              <path d="M0 170 Q50 155 100 170 T200 170 T300 170 T400 170 V300 H0Z" fill="#1c9bb0"/>
+              <path d="M0 195 Q50 182 100 195 T200 195 T300 195 T400 195 V300 H0Z" fill="#137487"/>
+              <path d="M0 240 C80 210 160 220 240 245 C310 265 360 230 400 235 V300 H0Z" fill="#e7c47a"/>
+              <path d="M70 70 q10 -10 20 0 q10 -10 20 0 M130 50 q7 -7 14 0 q7 -7 14 0" stroke="#141210" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </svg>
+            <p class="postcard__greeting">Saludos desde<br><span>Las Salinas</span></p>
+          </div>
+          <div class="postcard__back">
+            <div class="postcard__stamp" aria-hidden="true">
+              <img src="assets/img/logo.jpg" alt="" width="84" height="84" loading="lazy">
             </div>
-            <h3>Santuario de la Naturaleza</h3>
-            <p>Humedal y flora nativa: un espacio de paz rodeado de aves y vida silvestre.</p>
-          </article>
-          <article class="pillar reveal">
-            <div class="pillar__art pillar__art--sea" aria-hidden="true">
-              <svg viewBox="0 0 200 120"><path d="M0 70 Q25 60 50 70 T100 70 T150 70 T200 70 V120 H0Z" fill="#1fb5c9"/><path d="M0 90 Q25 80 50 90 T100 90 T150 90 T200 90 V120 H0Z" fill="#0d7f93"/><path d="M20 120 C60 100 80 95 110 80" stroke="#7fe3f0" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="40" cy="30" r="14" fill="#FFDE59"/></svg>
+            <div class="postcard__postmark" aria-hidden="true">Pullally<br>Papudo</div>
+            <h2 class="postcard__title">Nuestras raíces</h2>
+            <p>Roots Salinas nace del cariño por este rincón de la costa y por la buena mesa. Somos el lugar para comer rico en familia, recargar energía después de un día de playa o juntar a la comunidad donde el río se encuentra con el mar.</p>
+            <ul class="postcard__facts">
+              <li><strong>Hecho al momento.</strong> Churrascos, empanadas y churros recién preparados.</li>
+              <li><strong>Ambiente familiar.</strong> Tranquilo para niños, abuelos y amigos.</li>
+              <li><strong>Con la comunidad.</strong> Atención especial para clubes, juntas de vecinos y colegios.</li>
+            </ul>
+            <p class="postcard__sign">¡Te esperamos!</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ENTORNO: polaroids en cartón -->
+    <section class="section section--kraft" id="entorno">
+      <div class="container">
+        <h2 class="title title--center">Al lado de un santuario de la naturaleza</h2>
+        <p class="lead lead--center">Estamos junto al Santuario de la Naturaleza Humedal Salinas de Pullally y Dunas de Longotoma, donde los ríos Petorca y La Ligua llegan al mar. Ven por el sabor y quédate por el paisaje.</p>
+
+        <dl class="facts">
+          <div><dt>677 ha</dt><dd>de humedal y dunas protegidas</dd></div>
+          <div><dt>2 ríos</dt><dd>Petorca y La Ligua se juntan con el mar</dd></div>
+          <div><dt>~2 h</dt><dd>desde Santiago por la Ruta 5 Norte</dd></div>
+        </dl>
+
+        <div class="polaroids">
+          <figure class="polaroid">
+            <div class="polaroid__img polaroid__img--green" aria-hidden="true">
+              <svg viewBox="0 0 200 160"><circle cx="150" cy="40" r="16" fill="#ffde59"/><path d="M0 160 C40 100 80 120 100 96 C130 60 160 106 200 84 V160Z" fill="#4c6b2c"/><path d="M110 70 q8 -6 16 0 q8 -6 16 0 M60 55 q6 -5 12 0 q6 -5 12 0" stroke="#141210" stroke-width="3" fill="none"/></svg>
             </div>
-            <h3>El río y la playa</h3>
-            <p>A pasos de donde el río Petorca llega al mar. Antes o después del baño, aquí te esperamos.</p>
-          </article>
-          <article class="pillar reveal">
-            <div class="pillar__art pillar__art--sand" aria-hidden="true">
-              <svg viewBox="0 0 200 120"><path d="M0 120 C30 60 80 50 120 80 C150 100 170 70 200 75 V120Z" fill="#d9ad55"/><path d="M0 120 C50 90 100 110 200 95 V120Z" fill="#e8c77a"/><path d="M40 72 l3 -18 l3 18 M48 70 l5 -14 l1 15" stroke="#3f6b2a" stroke-width="3" fill="none"/><circle cx="160" cy="30" r="14" fill="#FFDE59"/></svg>
+            <figcaption><strong>El humedal</strong>Lagunas, flora nativa y aves que llegan a descansar.</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <div class="polaroid__img polaroid__img--sea" aria-hidden="true">
+              <svg viewBox="0 0 200 160"><path d="M0 90 Q25 80 50 90 T100 90 T150 90 T200 90 V160 H0Z" fill="#1c9bb0"/><path d="M0 115 Q25 105 50 115 T100 115 T150 115 T200 115 V160 H0Z" fill="#137487"/><path d="M10 160 C60 135 90 125 120 100" stroke="#8fe0ec" stroke-width="12" fill="none" stroke-linecap="round"/><circle cx="45" cy="40" r="15" fill="#ffde59"/></svg>
             </div>
-            <h3>Las dunas</h3>
-            <p>Un paisaje único para caminar, jugar y desconectarse del ruido de la ciudad.</p>
-          </article>
-          <article class="pillar reveal">
-            <div class="pillar__art pillar__art--gold" aria-hidden="true">
-              <svg viewBox="0 0 200 120"><circle cx="100" cy="62" r="30" fill="#f5f0e1"/><path d="M100 32 l12 18 l-12 10 l-12 -10z M70 62 l18 -2 l4 16 l-14 8z M130 62 l-18 -2 l-4 16 l14 8z M90 88 l10 -12 l10 12 l-6 4 h-8z" fill="#0d0d0d"/><path d="M0 110 H200" stroke="#0d0d0d" stroke-width="6"/></svg>
+            <figcaption><strong>El río y la playa</strong>La desembocadura, a pasos de nuestras mesas.</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <div class="polaroid__img polaroid__img--sand" aria-hidden="true">
+              <svg viewBox="0 0 200 160"><path d="M0 160 C30 80 80 70 120 104 C150 128 170 92 200 98 V160Z" fill="#d1a24c"/><path d="M0 160 C50 122 100 146 200 126 V160Z" fill="#e7c47a"/><path d="M40 98 l3 -20 l3 20 M48 96 l5 -16 l1 17" stroke="#4c6b2c" stroke-width="3" fill="none"/><circle cx="160" cy="40" r="15" fill="#ffde59"/></svg>
             </div>
-            <h3>Familiar y deportivo</h3>
-            <p>El descanso ideal tras partidos, caminatas, paseos de curso o actividades al aire libre.</p>
-          </article>
+            <figcaption><strong>Las dunas</strong>Para caminar, jugar y desconectarse.</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <div class="polaroid__img polaroid__img--gold" aria-hidden="true">
+              <svg viewBox="0 0 200 160"><circle cx="100" cy="80" r="34" fill="#fff"/><path d="M100 46 l14 20 l-14 12 l-14 -12z M66 80 l20 -2 l5 18 l-16 9z M134 80 l-20 -2 l-5 18 l16 9z M89 110 l11 -13 l11 13 l-6 5 h-10z" fill="#141210"/><path d="M0 146 H200" stroke="#141210" stroke-width="6" stroke-dasharray="14 10"/></svg>
+            </div>
+            <figcaption><strong>Familiar y deportivo</strong>El descanso perfecto después del partido o el paseo de curso.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cuidado">
+          <p class="cuidado__title">Cuidemos el santuario</p>
+          <ul>
+            <li>Camina por los senderos y no entres con vehículos a las dunas.</li>
+            <li>Observa las aves de lejos, sobre todo en época de nidos.</li>
+            <li>Llévate tu basura. Si no hay basurero cerca, la recibimos nosotros.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ============ CARTA ============ -->
+    <!-- CARTA: como la carta impresa -->
     <section class="section section--black" id="carta">
       <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Nuestra carta</p>
-          <h2 class="title">¿Qué se te antoja hoy?</h2>
-          <p class="section__sub">Todo preparado al momento. Consulta la disponibilidad del día en tu visita.</p>
-        </header>
-        <div class="tabs" role="tablist" aria-label="Categorías de la carta" id="carta-tabs"></div>
-        <div class="menu-panel" id="carta-panel" role="tabpanel" aria-live="polite"></div>
-        <p class="menu-download">
-          <a href="assets/img/carta-roots-salinas.jpg" target="_blank" rel="noopener" class="btn btn--outline btn--sm">📄 Ver carta completa (imagen)</a>
+        <div class="carta__head">
+          <h2 class="title title--gold">Nuestra carta</h2>
+          <p class="carta__slogan">El sabor que te atrapa</p>
+        </div>
+        <p class="lead lead--light">Todo se prepara al momento. Pregunta en el local qué hay disponible hoy.</p>
+        <div class="carta" id="carta-grid"></div>
+        <p class="carta__download">
+          <a href="assets/img/carta-roots-salinas.jpg" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Ver la carta impresa</a>
         </p>
       </div>
     </section>
 
-    <!-- ============ PACKS ============ -->
+    <!-- PACKS: tickets -->
     <section class="section section--gold" id="packs">
       <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow eyebrow--dark">Packs grupales</p>
-          <h2 class="title title--dark">¡Vengan todos!</h2>
-          <p class="section__sub section__sub--dark">¿Organizas un paseo de curso, la salida del club de adulto mayor, el centro de madres o el tercer tiempo del equipo? Tenemos packs pensados para cada grupo, con atención y espacio preparado.</p>
-        </header>
-        <div class="packs" id="packs-grid"></div>
-        <p class="packs__note">Los packs se pueden ajustar a tu presupuesto y a necesidades especiales (vegetarianos, sin gluten, etc.). Escríbenos y lo armamos juntos.</p>
+        <h2 class="title title--center">Packs para grupos</h2>
+        <p class="lead lead--center">¿Organizas el paseo de curso, la salida del club de adulto mayor, el centro de madres o el tercer tiempo del equipo? Elige un pack, cuéntanos cuántos vienen y te mandamos una propuesta.</p>
+        <div class="tickets" id="packs-grid"></div>
+        <p class="note note--dark">Todos los packs se ajustan a tu presupuesto y a necesidades especiales, como opciones vegetarianas o sin gluten.</p>
       </div>
     </section>
 
-    <!-- ============ RESERVA ============ -->
-    <section class="section section--dark" id="reservar">
-      <div class="container split split--form">
-        <div class="split__text reveal">
-          <p class="eyebrow">Reservas grupales</p>
-          <h2 class="title">Cotiza tu visita <br>en 1 minuto</h2>
-          <p>Completa los datos y te llega la solicitud lista para enviarnos por mensaje. Te respondemos con disponibilidad y precio especial para tu grupo.</p>
-          <ul class="checklist">
-            <li>Grupos desde 8 personas</li>
-            <li>Espacio reservado y atención preferente</li>
-            <li>Packs adaptables a cada presupuesto</li>
-          </ul>
+    <!-- RESERVA: comanda -->
+    <section class="section section--kraft" id="reservar">
+      <div class="container reserva">
+        <div class="reserva__intro">
+          <h2 class="title">Cotiza tu visita</h2>
+          <p class="lead">Llena la comanda y se abre un mensaje con todo listo para enviarnos. Te respondemos con disponibilidad y una propuesta para tu grupo.</p>
+          <ol class="pasos">
+            <li>Llena la comanda.</li>
+            <li>Envía el mensaje que se abre.</li>
+            <li>Te respondemos con la propuesta.</li>
+          </ol>
+          <button type="button" class="btn btn--outline-dark btn--sm" id="compartir">Compartir esta página con mi grupo</button>
         </div>
-        <form class="form reveal" id="form-reserva" novalidate>
-          <div class="form__row">
-            <label>Nombre del organizador / institución*
-              <input name="organizador" required autocomplete="organization" placeholder="Ej: Club Adulto Mayor Las Gaviotas">
-            </label>
+        <form class="comanda" id="form-reserva" novalidate>
+          <div class="comanda__head">
+            <p class="comanda__title">Comanda de grupo</p>
+            <img src="assets/img/logo.jpg" alt="" width="56" height="56">
           </div>
-          <div class="form__row form__row--2">
-            <label>Tipo de grupo*
+          <label>Organizador o institución
+            <input name="organizador" required autocomplete="organization" placeholder="Club Adulto Mayor Las Gaviotas">
+          </label>
+          <div class="comanda__row">
+            <label>Tipo de grupo
               <select name="tipo" required>
-                <option value="">Selecciona…</option>
-                <option>Colegio / Curso</option>
-                <option>Club de Adulto Mayor</option>
-                <option>Centro de Madres</option>
-                <option>Junta de Vecinos</option>
-                <option>Equipo / Club Deportivo</option>
-                <option>Reunión Familiar / Cumpleaños</option>
+                <option value="">Elige una opción</option>
+                <option>Colegio o curso</option>
+                <option>Club de adulto mayor</option>
+                <option>Centro de madres</option>
+                <option>Junta de vecinos</option>
+                <option>Club deportivo</option>
+                <option>Familia o cumpleaños</option>
                 <option>Empresa</option>
                 <option>Otro</option>
               </select>
             </label>
-            <label>Pack de interés
+            <label>Pack
               <select name="pack" id="select-pack">
-                <option value="">Aún no sé / A medida</option>
+                <option value="">Todavía no sé</option>
               </select>
             </label>
           </div>
-          <div class="form__row form__row--3">
-            <label>N° de personas*
+          <div class="comanda__row comanda__row--3">
+            <label>Personas
               <input name="personas" type="number" min="1" max="300" required inputmode="numeric" placeholder="25">
             </label>
-            <label>Fecha*
+            <label>Fecha
               <input name="fecha" type="date" required>
             </label>
             <label>Hora aprox.
               <input name="hora" type="time">
             </label>
           </div>
-          <div class="form__row">
-            <label>Comentarios
-              <textarea name="comentarios" rows="3" placeholder="Ej: 3 personas vegetarianas, llegamos en bus."></textarea>
-            </label>
-          </div>
-          <button type="submit" class="btn btn--gold btn--block">Enviar solicitud de reserva</button>
-          <p class="form__msg" id="form-msg" role="status"></p>
+          <label>Comentarios
+            <textarea name="comentarios" rows="2" placeholder="3 vegetarianos, llegamos en bus"></textarea>
+          </label>
+          <button type="submit" class="btn btn--dark btn--block">Enviar solicitud</button>
+          <p class="comanda__msg" id="form-msg" role="status"></p>
         </form>
       </div>
     </section>
 
-    <!-- ============ UBICACIÓN ============ -->
-    <section class="section section--sand" id="ubicacion">
-      <div class="container split">
-        <div class="split__text reveal">
-          <p class="eyebrow">Ubicación y horarios</p>
-          <h2 class="title">Nos vemos en la playa</h2>
+    <!-- UBICACIÓN -->
+    <section class="section section--black" id="ubicacion">
+      <div class="container ubicacion">
+        <div>
+          <h2 class="title title--gold">Cómo llegar</h2>
           <p class="addr"><strong data-bind="direccion"></strong><br><span data-bind="comuna"></span></p>
-          <p>Al norte de Papudo, por la ruta costera. Busca la desembocadura del río y las dunas: ahí estamos.</p>
-          <dl class="hours" id="horarios"></dl>
-          <a class="btn btn--dark" id="link-mapa" target="_blank" rel="noopener">📍 Cómo llegar</a>
+          <ul class="rutas">
+            <li><strong>Desde Santiago:</strong> Ruta 5 Norte hacia Papudo, unos 140 km (cerca de 2 horas).</li>
+            <li><strong>Desde Papudo:</strong> sigue al norte por la costa hasta Pullally. Busca la desembocadura del río y las dunas: ahí estamos.</li>
+            <li><strong>En bus de grupo:</strong> avísanos al cotizar y te indicamos dónde estacionar y bajar.</li>
+          </ul>
+          <div class="map-btns">
+            <a class="btn btn--gold" id="link-mapa" target="_blank" rel="noopener">Abrir en Google Maps</a>
+            <a class="btn btn--outline" id="link-waze" target="_blank" rel="noopener">Abrir en Waze</a>
+          </div>
         </div>
-        <div class="map reveal">
-          <iframe id="mapa" title="Mapa de Roots Salinas en Playa Las Salinas, Pullally" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <figure class="polaroid polaroid--map">
+          <div class="polaroid__img">
+            <iframe id="mapa" title="Mapa de Playa Las Salinas, Pullally" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <figcaption>Aquí nos vemos</figcaption>
+        </figure>
+      </div>
+
+      <div class="container info-grid">
+        <div class="hours-sign">
+          <p class="hours-sign__title">Horarios</p>
+          <dl id="horarios"></dl>
         </div>
+        <div class="faq">
+          <h3 class="faq__title">Preguntas frecuentes</h3>
+          <div id="faq-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES -->
+    <section class="section section--gold redes">
+      <div class="container redes__inner">
+        <div>
+          <h2 class="title">Síguenos en Instagram</h2>
+          <p class="lead">Promos del día, novedades de la carta y los atardeceres de Las Salinas.</p>
+        </div>
+        <a class="ig-card" id="ig-card" target="_blank" rel="noopener">
+          <img src="assets/img/logo.jpg" alt="" width="72" height="72" loading="lazy">
+          <span class="ig-card__handle">@roots.salinas</span>
+          <span class="btn btn--dark btn--sm">Seguir</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
+    <div class="awning awning--footer" aria-hidden="true"></div>
     <div class="container footer__grid">
-      <div class="footer__brand">
-        <img src="assets/img/logo.jpg" alt="Logo Roots Salinas" width="96" height="96" loading="lazy">
-        <p class="footer__script">¡Gracias por preferirnos!</p>
-      </div>
-      <div>
-        <h3>Contacto</h3>
-        <ul class="footer__links">
-          <li><a id="footer-ig" target="_blank" rel="noopener">📸 @roots.salinas</a></li>
-          <li id="footer-wa-li"><a id="footer-wa" target="_blank" rel="noopener">💬 WhatsApp</a></li>
-          <li><a href="#reservar">🚌 Reservas grupales</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Explora</h3>
-        <ul class="footer__links">
-          <li><a href="#carta">Carta</a></li>
-          <li><a href="#packs">Packs grupales</a></li>
-          <li><a href="#ubicacion">Cómo llegar</a></li>
-        </ul>
-      </div>
+      <p class="footer__thanks">¡Gracias por preferirnos!</p>
+      <ul class="footer__links">
+        <li><a id="footer-ig" target="_blank" rel="noopener">Instagram @roots.salinas</a></li>
+        <li id="footer-wa-li"><a id="footer-wa" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="#reservar">Cotizar un grupo</a></li>
+        <li><a href="#ubicacion">Cómo llegar</a></li>
+      </ul>
     </div>
-    <p class="footer__legal">© <span id="year"></span> Roots Salinas · Playa Las Salinas, Pullally, Papudo</p>
+    <p class="footer__legal">© <span id="year"></span> Roots Salinas, Playa Las Salinas, Pullally, Papudo</p>
   </footer>
 
-  <a class="fab" id="fab" target="_blank" rel="noopener" aria-label="Escríbenos">💬<span>Escríbenos</span></a>
+  <a class="fab" id="fab" target="_blank" rel="noopener">Escríbenos</a>
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/main.js"></script>
