@@ -17,7 +17,12 @@ window.ROOTS = {
     instagramPosts: [],
     direccion: "Playa Las Salinas, Pullally",
     comuna: "Comuna de Papudo, Región de Valparaíso",
-    mapaQuery: "Playa Las Salinas, Pullally, Papudo, Chile",
+    // Ubicación exacta del local en Google Maps (ficha "Roots Salinas").
+    mapa: {
+      lat: -32.4162537,
+      lng: -71.4118144,
+      googleMaps: "https://www.google.com/maps/place/Roots+Salinas/@-32.4162537,-71.4118144,17z/data=!4m6!3m5!1s0x9689a7000617d02d:0x24eb394f1e30825b!8m2!3d-32.4162537!4d-71.4118144!16s%2Fg%2F11lztk1pp4",
+    },
   },
 
   // Horarios (texto libre). ⚠ CONFIRMAR antes de publicar.
