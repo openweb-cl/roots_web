@@ -13,24 +13,25 @@ vecinos, clubes deportivos y familias.
 | Reservas | Formulario que arma el mensaje y lo abre en **WhatsApp** (o Instagram si aún no hay número) | Sin backend ni base de datos; el pedido llega directo al celular del negocio. |
 | Contenido editable | Todo en `assets/js/config.js` | Carta, packs, horarios y contacto se cambian sin tocar el diseño. |
 | Precios | **Ocultos por ahora.** Carta sin precios, packs "Precio a consultar" | Interruptores `mostrarPrecios` y `mostrarValoresBase` en `config.js` para activarlos cuando se decida. |
-| Estilo | **Kiosko de playa pintado a mano** con negro + amarillo oro de la marca | Para no parecer "otra página de restaurante": toldo a rayas, letreros de cartón a plumón, postal, polaroids, carta igual a la impresa, packs como tickets y formulario como comanda. |
+| Estilo | **"Elegante con vida"**: noche negra y oro de la marca, fotografía grande de la costa, curvas de duna entre secciones y dibujos de línea dorada (aves, olas, pasto de duna) | Elegante como las referencias, pero propio del lugar. v1 se veía típica y v2 (kiosko/toldo) tosca. |
 
-**Tipografías:** Bowlby One (letrero pintado a mano), Permanent Marker (cartones escritos a plumón)
-y Poppins (texto, igual a "SALINAS" del logo).
+**Tipografías:** Fraunces (títulos, serif cálida y cercana) y Poppins (texto, igual a "SALINAS" del logo).
+
+**Fotos:** 5 imágenes referenciales generadas con IA (playa con dunas y río, humedal, churrasco, empanadas, churros) + 1 foto libre de Wikimedia Commons (ola en Papudo, CC BY-SA 3.0, con crédito en el footer). Se reemplazan por fotos reales en `assets/img/fotos/` manteniendo el mismo nombre de archivo.
 
 ## Estructura del sitio
 
 1. **Header fijo**: logo, menú y botón "Cotizar un grupo".
-2. **Hero**: toldo a rayas, logo, "Entre dunas, río y mar", letreros de cartón y franja de playa ilustrada.
-3. **Nuestras raíces**: una postal "Saludos desde Las Salinas" con historia y 3 valores.
+2. **Hero**: foto de la playa a pantalla completa, "Entre dunas, río y mar" y aves en línea dorada.
+3. **Nuestras raíces**: frase, historia, 3 valores y collage de fotos.
 4. **El lugar**: Santuario de la Naturaleza Humedal Salinas de Pullally y Dunas de Longotoma (677 ha,
-   desembocadura de los ríos Petorca y La Ligua), cifras clave, 4 polaroids y "Cuidemos el santuario".
-5. **Carta**: todas las categorías a la vista, con el estilo de la carta impresa (sin precios por ahora).
-6. **Packs para grupos**: 5 tickets con "Precio a consultar" y botón "Cotizar este pack".
-7. **Cotiza tu visita**: comanda (formulario) → WhatsApp/Instagram, 3 pasos y botón para compartir la página con el grupo.
+   desembocadura de los ríos Petorca y La Ligua), cifras clave, galería de fotos y "Cuidemos el santuario".
+5. **Carta**: 3 fotos de platos y todas las categorías a la vista (sin precios por ahora).
+6. **Packs para grupos**: 5 tarjetas con ícono de línea dorada, "Precio a consultar" y botón "Cotizar este pack".
+7. **Cotiza tu visita**: formulario → WhatsApp/Instagram, 3 pasos y botón para compartir la página con el grupo.
 8. **Cómo llegar**: rutas desde Santiago, Papudo y en bus; mapa; Google Maps y Waze; horarios; preguntas frecuentes.
-9. **Instagram**: tarjeta para seguir @roots.salinas.
-10. **Footer** con toldo y botón flotante "Escríbenos".
+9. **Instagram**: banda con foto para seguir @roots.salinas.
+10. **Footer** con créditos de fotos y botón flotante "Escríbenos".
 
 ## Propuesta de packs (valores base guardados, no visibles)
 
@@ -48,7 +49,7 @@ Los valores base proponen ~10% bajo el precio de carta, como incentivo para grup
 ## Fases
 
 ### Fase 1 · MVP publicado (✅ esta entrega)
-- [x] v1 descartada por verse "típica"; v2 con concepto kiosko de playa
+- [x] v1 descartada por verse "típica"; v2 (kiosko) descartada por tosca; v3 "Elegante con vida" con fotos
 - [x] Rama de trabajo `claude/vibrant-goldberg-dozfks`
 - [x] Sitio completo, responsive (celular primero), accesible y con animaciones suaves
 - [x] Carta real cargada, packs, formulario a WhatsApp/Instagram, mapa
@@ -58,7 +59,8 @@ Los valores base proponen ~10% bajo el precio de carta, como incentivo para grup
 ### Fase 2 · Datos reales (necesito tu info)
 - [ ] Número de WhatsApp del negocio → `contacto.whatsapp`
 - [ ] Horarios reales → `horarios`
-- [ ] **Fotos reales**: local, platos, playa, dunas, río, grupos (reemplazan las ilustraciones de "El lugar")
+- [ ] **Fotos reales**: local, platos, playa, dunas, río y grupos (reemplazan las imágenes de IA)
+- [ ] Opcional: guardar `OPENAI_API_KEY` en el entorno para generar más imágenes con IA (grupos, completo, local)
 - [ ] Confirmar contenido de cada pack y mínimos de personas
 - [ ] Decidir si se publican valores base de packs y/o precios de carta
 - [ ] Revisar textos de "Nuestras raíces"
@@ -91,5 +93,5 @@ Cada push a la rama de trabajo o a `main` publica el sitio automáticamente (Git
 
 ## Capacidad
 
-GitHub Pages permite ~100 GB de transferencia al mes. El sitio pesa ~350 KB (sin fotos), es decir,
+GitHub Pages permite ~100 GB de transferencia al mes. El sitio pesa ~1,3 MB con fotos, es decir,
 200 visitas/semana ≈ 0,3 GB/mes. Al agregar fotos, optimizarlas a ≤200 KB cada una (formato WebP o JPG).

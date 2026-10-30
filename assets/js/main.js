@@ -30,15 +30,15 @@
   $("#horarios").innerHTML = R.horarios.map((h) => `<div><dt>${esc(h.dias)}</dt><dd>${esc(h.horas)}</dd></div>`).join("");
   $("#faq-list").innerHTML = R.faq.map((f) => `<details><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join("");
 
-  /* ---------- Carta (todas las categorías a la vista, como la impresa) ---------- */
+  /* ---------- Carta ---------- */
   $("#carta-grid").innerHTML = R.carta
     .map(
-      (cat) => `<section class="carta__panel">
-        <h3><span class="carta__icon" aria-hidden="true">${cat.emoji}</span>${esc(cat.titulo)}</h3>
+      (cat) => `<section class="carta__cat">
+        <h3>${esc(cat.titulo)}</h3>
         <ul>${cat.items
           .map(
-            (it) => `<li${it.destacado ? ' class="is-fav"' : ""}>
-              <span class="carta__name">${esc(it.nombre)}${it.destacado ? ' <em class="carta__fav">¡favorito!</em>' : ""}</span>
+            (it) => `<li>
+              <span class="carta__name">${esc(it.nombre)}${it.destacado ? ' <em class="carta__fav">favorito</em>' : ""}</span>
               ${R.mostrarPrecios && it.precio ? `<span class="carta__price">${clp(it.precio)}</span>` : ""}
               ${it.detalle ? `<small>${esc(it.detalle)}</small>` : ""}
             </li>`
@@ -49,27 +49,29 @@
     .join("");
   if (!R.mostrarPrecios) $(".carta__download").remove();
 
-  /* ---------- Packs como tickets ---------- */
+  /* ---------- Packs ---------- */
+  const ICONOS = {
+    mochila: '<path d="M16 22v-4a8 8 0 0 1 16 0v4"/><rect x="10" y="22" width="28" height="22" rx="6"/><path d="M18 32h12M18 44v-6h12v6"/>',
+    taza: '<path d="M10 20h24v10a12 12 0 0 1-24 0z"/><path d="M34 22h3a5 5 0 0 1 0 10h-3"/><path d="M8 44h30M18 8c-2 3 2 5 0 8M26 8c-2 3 2 5 0 8"/>',
+    corazon: '<path d="M24 40S8 30 8 19a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 11-16 21-16 21z"/><path d="M4 30c4 0 6 3 10 3M44 30c-4 0-6 3-10 3"/>',
+    pelota: '<circle cx="24" cy="24" r="16"/><path d="M24 15l7 5-3 8h-8l-3-8z M24 8v7 M31 20l8-3 M28 28l5 7 M20 28l-5 7 M17 20l-8-3"/>',
+    torta: '<rect x="9" y="24" width="30" height="16" rx="3"/><path d="M9 31c5 3 10-3 15 0s10 3 15 0"/><path d="M17 24v-6M24 24v-6M31 24v-6M17 14c-1-2 1-3 0-5M24 14c-1-2 1-3 0-5M31 14c-1-2 1-3 0-5M6 44h36"/>',
+  };
+  const icono = (k) => `<svg viewBox="0 0 48 48" aria-hidden="true">${ICONOS[k] || ICONOS.corazon}</svg>`;
   $("#packs-grid").innerHTML = R.packs
     .map(
-      (p) => `<article class="ticket">
-        <div class="ticket__stub">
-          <span class="ticket__icon" aria-hidden="true">${p.icono}</span>
-          <span class="ticket__min">Desde<strong>${p.minimo}</strong>personas</span>
-        </div>
-        <div class="ticket__body">
-          <h3>${esc(p.nombre)}</h3>
-          <p class="ticket__for">${esc(p.para)}</p>
-          <ul>${p.incluye.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
-          <div class="ticket__foot">
-            <p class="ticket__price">${
-              R.mostrarValoresBase && p.valorBase
-                ? `Desde <strong>${clp(p.valorBase)}</strong> por persona`
-                : `<strong>Precio a consultar</strong>`
-            }</p>
-            <a href="#reservar" class="btn btn--dark btn--sm" data-pack="${p.id}">Cotizar este pack</a>
-          </div>
-        </div>
+      (p) => `<article class="pack">
+        <div class="pack__icon">${icono(p.icono)}</div>
+        <h3>${esc(p.nombre)}</h3>
+        <p class="pack__for">${esc(p.para)}</p>
+        <p class="pack__min">Desde ${p.minimo} personas</p>
+        <ul>${p.incluye.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
+        <p class="pack__price">${
+          R.mostrarValoresBase && p.valorBase
+            ? `Desde <strong>${clp(p.valorBase)}</strong> por persona`
+            : "Precio a consultar"
+        }</p>
+        <a href="#reservar" class="btn btn--ghost btn--sm btn--block" data-pack="${p.id}">Cotizar este pack</a>
       </article>`
     )
     .join("");
@@ -125,7 +127,11 @@
     }
   });
 
-  /* ---------- Navegación móvil ---------- */
+  /* ---------- Navegación ---------- */
+  const nav = $("#nav");
+  const onScroll = () => nav.classList.toggle("is-solid", window.scrollY > 60);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
   const toggle = $(".nav__toggle");
   const menu = $("#menu-principal");
   const setMenu = (open) => {
