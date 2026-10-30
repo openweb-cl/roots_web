@@ -9,8 +9,12 @@ window.ROOTS = {
   contacto: {
     // Número de WhatsApp con código de país, solo dígitos. Ej: "56912345678".
     // Si queda vacío, las solicitudes se envían por mensaje directo de Instagram.
-    whatsapp: "",
+    whatsapp: "56972702991",
     instagram: "roots.salinas",
+    // Publicaciones de Instagram que se muestran en la página (embed oficial).
+    // Copia el enlace de cada post desde Instagram (… → Copiar enlace) y pégalo aquí.
+    // Ej: "https://www.instagram.com/p/ABC123xyz/". Se recomiendan 3.
+    instagramPosts: [],
     direccion: "Playa Las Salinas, Pullally",
     comuna: "Comuna de Papudo, Región de Valparaíso",
     mapaQuery: "Playa Las Salinas, Pullally, Papudo, Chile",

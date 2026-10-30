@@ -57,7 +57,8 @@ Los valores base proponen ~10% bajo el precio de carta, como incentivo para grup
 - [x] Despliegue automático a GitHub Pages en cada push
 
 ### Fase 2 · Datos reales (necesito tu info)
-- [ ] Número de WhatsApp del negocio → `contacto.whatsapp`
+- [x] Número de WhatsApp del negocio → `contacto.whatsapp` (+56 9 7270 2991)
+- [ ] Enlaces de 3 publicaciones de Instagram → `contacto.instagramPosts` (se muestran con el embed oficial)
 - [ ] Horarios reales → `horarios`
 - [ ] **Fotos reales**: local, platos, playa, dunas, río y grupos (reemplazan las imágenes de IA)
 - [ ] Opcional: guardar `OPENAI_API_KEY` en el entorno para generar más imágenes con IA (grupos, completo, local)

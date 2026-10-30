@@ -13,8 +13,29 @@
 
   $("#footer-ig").href = igUrl;
   $("#ig-card").href = igUrl;
-  if (hasWa) $("#footer-wa").href = waUrl();
-  else $("#footer-wa-li").remove();
+  const waVisible = hasWa ? R.contacto.whatsapp.replace(/^56(9)(\d{4})(\d{4})$/, "+56 $1 $2 $3") : "";
+  if (hasWa) {
+    $("#footer-wa").href = waUrl();
+    $("#footer-wa").textContent = "WhatsApp " + waVisible;
+    $("#contacto-wa").innerHTML = `¿Dudas para llegar? Escríbenos al <a href="${waUrl("¡Hola Roots Salinas! Tengo una consulta para llegar")}" target="_blank" rel="noopener">WhatsApp ${waVisible}</a>`;
+  } else {
+    $("#footer-wa-li").remove();
+    $("#contacto-wa").remove();
+  }
+
+  /* ---------- Publicaciones de Instagram (embed oficial) ---------- */
+  const posts = (R.contacto.instagramPosts || []).filter((u) => /^https:\/\/www\.instagram\.com\/(p|reel)\/[\w-]+\/?/.test(u));
+  if (posts.length) {
+    const box = $("#ig-posts");
+    box.innerHTML = posts
+      .map((u) => `<blockquote class="instagram-media" data-instgrm-permalink="${esc(u)}" data-instgrm-version="14"><a href="${esc(u)}" target="_blank" rel="noopener">Ver en Instagram</a></blockquote>`)
+      .join("");
+    box.hidden = false;
+    const sc = document.createElement("script");
+    sc.async = true;
+    sc.src = "https://www.instagram.com/embed.js";
+    document.body.appendChild(sc);
+  }
   $("#fab").href = chatUrl;
   $("#year").textContent = new Date().getFullYear();
 

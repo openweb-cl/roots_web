@@ -264,6 +264,10 @@ p { margin: 0 0 1em; }
 .redes::before { content: ""; position: absolute; inset: 0; background: rgba(18, 16, 13, .62); z-index: 1; }
 .redes__inner { position: relative; z-index: 2; }
 .redes .lead { margin: 0 auto 1.8em; color: #e9e1cf; }
+.ig-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; text-align: left; }
+.ig-posts .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; }
+.contacto-wa { margin: 1.4em 0 0; color: var(--muted); font-size: .95rem; }
+.contacto-wa a { color: var(--gold); }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--night); padding: 64px 0 28px; border-top: 1px solid rgba(201, 165, 74, .25); }
