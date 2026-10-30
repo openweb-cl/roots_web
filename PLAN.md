@@ -83,7 +83,7 @@ Los valores base proponen ~10% bajo el precio de carta, como incentivo para grup
 ## Cómo ver los avances
 
 Cada push a la rama de trabajo o a `main` publica el sitio automáticamente (GitHub Actions →
-"Publicar en GitHub Pages"). URL: **https://cristobalrocosaavedra.github.io/roots_web/**
+"Publicar en GitHub Pages"). URL: **https://openweb-cl.github.io/roots_web/**
 
 **Configuración única en GitHub** (la hace el dueño del repo):
 1. *Settings → Pages → Build and deployment → Source:* **GitHub Actions**.

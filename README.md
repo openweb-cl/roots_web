@@ -3,7 +3,7 @@
 Sitio web de **Roots Salinas** · Playa Las Salinas, Pullally, Papudo.
 "El sabor que te atrapa".
 
-🌐 **Sitio publicado:** https://cristobalrocosaavedra.github.io/roots_web/
+🌐 **Sitio publicado:** https://openweb-cl.github.io/roots_web/
 
 ## Editar contenido
 
