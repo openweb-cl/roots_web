@@ -42,10 +42,10 @@
   document.querySelectorAll("[data-bind]").forEach((el) => (el.textContent = R.contacto[el.dataset.bind] || ""));
 
   /* ---------- Mapa ---------- */
-  const q = encodeURIComponent(R.contacto.mapaQuery);
-  $("#mapa").src = `https://maps.google.com/maps?q=${q}&z=13&output=embed`;
-  $("#link-mapa").href = `https://www.google.com/maps/search/?api=1&query=${q}`;
-  $("#link-waze").href = `https://waze.com/ul?q=${q}&navigate=yes`;
+  const { lat, lng, googleMaps } = R.contacto.mapa;
+  $("#mapa").src = `https://maps.google.com/maps?q=${lat},${lng}+(Roots+Salinas)&z=16&hl=es&output=embed`;
+  $("#link-mapa").href = googleMaps;
+  $("#link-waze").href = `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
 
   /* ---------- Horarios y preguntas frecuentes ---------- */
   $("#horarios").innerHTML = R.horarios.map((h) => `<div><dt>${esc(h.dias)}</dt><dd>${esc(h.horas)}</dd></div>`).join("");
